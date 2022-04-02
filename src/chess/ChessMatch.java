@@ -24,6 +24,7 @@ public class ChessMatch {
 	private ChessPiece enPassantVulnerable;
 	private ChessPiece promoted;
 	
+	
 	private List<Piece> piecesOnTheBoard = new ArrayList<>();
 	private List<Piece> capturedPieces = new ArrayList<>();
 	
@@ -58,6 +59,8 @@ public class ChessMatch {
 		return promoted;
 	}
 	
+	
+	
 	public ChessPiece[][] getPieces() {
 		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
 		for (int i=0; i<board.getRows(); i++) {
@@ -88,7 +91,7 @@ public class ChessMatch {
 		
 		ChessPiece movedPiece = (ChessPiece)board.piece(target);
 		
-		// #specialmove promotion
+		// #specialmove promotion new
 		promoted = null;
 		if (movedPiece instanceof Pawn) {
 			if ((movedPiece.getColor() == Color.WHITE && target.getRow() == 0) || (movedPiece.getColor() == Color.BLACK && target.getRow() == 7)) {
